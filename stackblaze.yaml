@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: decap-cms
+    runtime: static
+    plan: free
+    staticPublishPath: ./
+    autoDeploy: false
