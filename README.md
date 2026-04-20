@@ -16,6 +16,19 @@ Serve the static files with any HTTP server.
 
 Edit admin/config.yml to configure collections, backends, and media.
 
+## Security
+
+### Before deploying to production
+
+- **Git backend credentials**: Configure your backend (`admin/config.yml`) to use a secure OAuth or Netlify Identity flow. Never commit personal access tokens or API keys to the repository.
+- **Backend branch**: The `branch` field in `admin/config.yml` defaults to `main`. Ensure this matches your production branch and that write access is properly scoped via your Git backend's OAuth app.
+- **Admin access**: The `/admin/` panel is publicly accessible by URL. Access is gated by your chosen backend's authentication (e.g. Netlify Identity, GitHub OAuth). Ensure authentication is configured before going live.
+
+### What is NOT safe by default
+
+- Decap CMS has no built-in rate limiting or IP allowlisting on the admin panel — rely on your Git provider's OAuth scopes and identity provider for access control.
+- Do not expose this template on a production domain without configuring a proper authentication backend in `admin/config.yml`.
+
 ---
 
 ### Maintained by [StackBlaze](https://stackblaze.com)
