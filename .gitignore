@@ -1,1 +1,17 @@
 .DS_Store
+
+# Environment / secrets
+.env
+.env.local
+.env.*.local
+
+# Private keys and certificates
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Credential files
+.netrc
+.htpasswd
+credentials
